@@ -12,6 +12,7 @@ export class RecipeInfoComponent implements OnInit {
 
   recipes_base = HOUSEWARES;
   recipes = [];
+  selected_recipe: Object;
 
 
   constructor() {
@@ -21,6 +22,10 @@ export class RecipeInfoComponent implements OnInit {
   ngOnInit(): void {
     for(var k in this.recipes_base){ this.recipes.push(k);}
     console.log(this.recipes);
+  }
+
+  onSelect(recipe: Recipe): void {
+    this.selected_recipe = recipe;
   }
 
 }
